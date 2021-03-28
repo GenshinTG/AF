@@ -1,4 +1,4 @@
-name: Send a telegram message to channel when new hot reddit post
+name: Send a telegram message to channel when new hot reddit post JSON
 on:
   reddit:
     url: https://reddit.com/r/Genshin_Impact/
