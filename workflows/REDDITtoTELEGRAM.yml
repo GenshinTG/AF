@@ -1,7 +1,7 @@
 name: Send a telegram message to channel when new hot reddit post
 on:
   reddit:
-    url: https://reddit.com/r/news/
+    url: https://reddit.com/r/Genshin_Impact/
 jobs:
   telegram:
     name: Send a telegram message
@@ -10,7 +10,7 @@ jobs:
       - name: Send a telegram message
         uses: appleboy/telegram-action@master
         with:
-          to: ${{ secrets.TELEGRAM_TO }}
+          to: ${{ secrets.TELEGRAM_RSSTESTCHANNEL }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             ${{ on.reddit.outputs.title }}
