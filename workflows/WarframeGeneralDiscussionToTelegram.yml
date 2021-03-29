@@ -4,7 +4,7 @@ on:
     url: https://forums.warframe.com/forum/36-general-discussion.xml
     config:
       limit: 15
-      force: false
+      force: true
 jobs:
   telegram:
     name: Send a telegram message
