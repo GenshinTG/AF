@@ -20,4 +20,4 @@ jobs:
           format: markdown
           message: |
             [${{ on.reddit.outputs.title }}](${{ on.reddit.outputs.url }})
-            ${{ on.reddit.outputs.link }}
+            ${{ on.reddit.outputs.permalink }}
