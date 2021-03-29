@@ -17,7 +17,7 @@ jobs:
           token: ${{ secrets.TELEGRAM_GENSHIN_TOKEN }}
           format: markdown
           message: |
-            *${{ on.rss.outputs.title }}*
+            <b>${{ on.rss.outputs.title }}</b>
             ${{ on.rss.outputs.description }}
 
             ${{ on.rss.outputs.link }}
