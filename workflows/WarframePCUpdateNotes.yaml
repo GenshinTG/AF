@@ -1,10 +1,11 @@
 name: Warframe PC Update Notes
 on:
   rss:
-    url: https://forums.warframe.com/forum/3-pc-update-notes.xml
+    url: http://feeds.feedburner.com/PCUpdateNotes
     config:
       limit: 5
       force: true
+
 jobs:
   telegram:
     name: Send a telegram message
