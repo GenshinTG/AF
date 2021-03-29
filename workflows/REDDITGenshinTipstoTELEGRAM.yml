@@ -1,7 +1,7 @@
-name: Send a telegram message to channel when new hot GI reddit post
+name: Send a telegram message to channel when new hot GI Tips reddit post
 on:
   reddit:
-    url: https://reddit.com/r/Genshin_Impact/
+    url: https://reddit.com/r/GenshinImpactTips/new
 jobs:
   telegram:
     name: Send a telegram message
