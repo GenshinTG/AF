@@ -15,7 +15,7 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_RSS1TESTCHANNEL }}
           token: ${{ secrets.TELEGRAM_GENSHIN_TOKEN }}
-          format: markdown
+          format: html
           message: |
             <b>${{ on.rss.outputs.title }}</b>
             ${{ on.rss.outputs.description }}
