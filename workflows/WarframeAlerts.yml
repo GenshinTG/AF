@@ -1,0 +1,22 @@
+name: Warframe Alerts
+on:
+  rss:
+    url: http://content.warframe.com/dynamic/rss.php
+    config:
+      limit: 15
+      force: true
+jobs:
+  telegram:
+    name: Send a telegram message
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send a telegram message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_RSS1TESTCHANNEL }}
+          token: ${{ secrets.TELEGRAM_GENSHIN_TOKEN }}
+          format: markdown
+          message: |
+            *${{ on.rss.outputs.author }}*
+
+            ${{ on.rss.outputs.title }}
