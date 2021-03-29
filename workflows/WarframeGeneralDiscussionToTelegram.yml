@@ -1,10 +1,10 @@
-name: Warframe General Discussion
+name: Warframe General Discussion Topics
 on:
   rss:
     url: https://forums.warframe.com/forum/36-general-discussion.xml
     config:
       limit: 15
-      force: true
+      force: false
 jobs:
   telegram:
     name: Send a telegram message
@@ -13,11 +13,10 @@ jobs:
       - name: Send a telegram message
         uses: appleboy/telegram-action@master
         with:
-          to: ${{ secrets.TELEGRAM_RSS1TESTCHANNEL }}
+          to: ${{ secrets.TELEGRAM_WFGENERALDISCUSSION_CHANNEL }}
           token: ${{ secrets.TELEGRAM_GENSHIN_TOKEN }}
-          format: html
+          format: markdown
           message: |
-            <b>${{ on.rss.outputs.title }}</b>
-            ${{ on.rss.outputs.description }}
+            *${{ on.rss.outputs.title }}*
 
             ${{ on.rss.outputs.link }}
