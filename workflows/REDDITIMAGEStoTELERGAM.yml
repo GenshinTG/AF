@@ -1,4 +1,4 @@
-name: Send a telegram picture to channel on new GI post
+name: Send reddit picture posts to Genshin Impact Reddit Posts Telegram Channel
 on:
   reddit:
     url: https://reddit.com/r/Genshin_Impact/new
@@ -17,6 +17,7 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_RSSTESTCHANNEL }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
+          format: markdown
           message: |
             [${{ on.reddit.outputs.title }}](${{ on.reddit.outputs.url }})
             ${{ on.reddit.outputs.link }}
