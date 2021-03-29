@@ -1,7 +1,7 @@
 name: Warframe General Discussion Topics
 on:
   rss:
-    url: http://feeds.feedburner.com/demegan
+    url: https://forums.warframe.com/discover/837.xml
     config:
       limit: 15
       force: true
