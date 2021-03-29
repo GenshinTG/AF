@@ -1,7 +1,11 @@
-name: Send a telegram message to channel when new hot reddit post
 on:
   reddit:
-    url: https://reddit.com/r/Genshin_Impact/
+    url: https://www.reddit.com/r/memes/new
+    source: json
+    config:
+      filter:
+        url:
+          $regex: jpg|png
 jobs:
   telegram:
     name: Send a telegram message
@@ -15,3 +19,4 @@ jobs:
           message: |
             ${{ on.reddit.outputs.title }}
             ${{ on.reddit.outputs.link }}
+          photo: ${{ on.reddit.outputs.url }}
