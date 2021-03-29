@@ -1,7 +1,7 @@
 name: Warframe General Discussion Topics
 on:
   rss:
-    url: https://forums.warframe.com/forum/36-general-discussion.xml
+    url: http://feeds.feedburner.com/WFGeneralDiscussion
     config:
       limit: 15
       force: false
