@@ -3,7 +3,7 @@ on:
   rss:
     url: https://forums.warframe.com/forum/3-pc-update-notes.xml
     config:
-      limit: 15
+      limit: 5
       force: true
 jobs:
   telegram:
