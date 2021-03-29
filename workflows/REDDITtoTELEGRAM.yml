@@ -12,7 +12,8 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_RSSTESTCHANNEL }}
           token: ${{ secrets.TELEGRAM_GENSHIN_TOKEN }}
+          format: markdown
           message: |
-            ${{ on.reddit.outputs.title }}
+            **${{ on.reddit.outputs.title }}**
 
             ${{ on.reddit.outputs.link }}

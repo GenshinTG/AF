@@ -1,0 +1,20 @@
+name: Warframe RSS Tests
+on:
+  rss:
+    url: https://forums.warframe.com/forum/170-announcements-events.xml
+jobs:
+  telegram:
+    name: Send a telegram message RSS Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send a telegram message RSS Test
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_RSS1TESTCHANNEL }}
+          token: ${{ secrets.TELEGRAM_GENSHIN_TOKEN }}
+          format: markdown
+          message: |
+            **Announcements & Events**
+            **${{ on.rss.outputs.title }}**
+
+            ${{ on.rss.outputs.link }}
