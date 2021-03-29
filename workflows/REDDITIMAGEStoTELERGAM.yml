@@ -18,6 +18,5 @@ jobs:
           to: ${{ secrets.TELEGRAM_RSSTESTCHANNEL }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            ${{ on.reddit.outputs.title }}
+            [${{ on.reddit.outputs.title }}](${{ on.reddit.outputs.url }})
             ${{ on.reddit.outputs.link }}
-          photo: ${{ on.reddit.outputs.url }}
