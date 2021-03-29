@@ -3,7 +3,7 @@ on:
   rss:
     url: https://forums.warframe.com/forum/170-announcements-events.xml
     config:
-      limit: 5
+      limit: 15
       force: true
 jobs:
   telegram:

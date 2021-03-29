@@ -2,7 +2,7 @@ name: Send a telegram message to channel when new hot GI reddit post
 on:
   reddit:
     url: https://reddit.com/r/Genshin_Impact/
-    limit: 5
+    limit: 15
 jobs:
   telegram:
     name: Send a telegram message
