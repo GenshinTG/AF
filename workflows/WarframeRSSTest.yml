@@ -2,6 +2,8 @@ name: Warframe RSS Tests
 on:
   rss:
     url: https://forums.warframe.com/forum/170-announcements-events.xml
+    config:
+      limit: 5
 jobs:
   telegram:
     name: Send a telegram message RSS Test
@@ -14,7 +16,7 @@ jobs:
           token: ${{ secrets.TELEGRAM_GENSHIN_TOKEN }}
           format: markdown
           message: |
-            **Announcements & Events**
-            **${{ on.rss.outputs.title }}**
+            *Announcements & Events*
 
+            *${{ on.rss.outputs.title }}*
             ${{ on.rss.outputs.link }}
