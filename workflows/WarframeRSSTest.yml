@@ -4,7 +4,7 @@ on:
     url: https://forums.warframe.com/forum/170-announcements-events.xml
     config:
       limit: 15
-      force: true
+      force: false
 jobs:
   telegram:
     name: Send a telegram message RSS Test

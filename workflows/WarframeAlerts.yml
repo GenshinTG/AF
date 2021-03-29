@@ -4,7 +4,7 @@ on:
     url: http://content.warframe.com/dynamic/rss.php
     config:
       limit: 15
-      force: true
+      force: false
 jobs:
   telegram:
     name: Send a telegram message
