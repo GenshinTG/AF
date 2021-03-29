@@ -14,7 +14,7 @@ jobs:
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_WFGENERALDISCUSSION_CHANNEL }}
-          token: ${{ secrets.TELEGRAM_GENSHIN_TOKEN }}
+          token: ${{ secrets.TELEGRAM_WARFRAMENEWSBOT_TOKEN }}
           format: markdown
           message: |
             *${{ on.rss.outputs.title }}*
