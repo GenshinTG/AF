@@ -1,0 +1,23 @@
+name: Warframe General Discussion Topics
+on:
+  rss:
+    url: http://feeds.feedburner.com/demegan
+    config:
+      limit: 15
+      force: true
+jobs:
+  telegram:
+    name: Send a telegram message
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send a telegram message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_RSS1TESTCHANNEL }}
+          token: ${{ secrets.TELEGRAM_GENSHIN_TOKEN }}
+          format: markdown
+          message: |
+            *New Reply from [DE]Megan*
+
+            *${{ on.rss.outputs.title }}*
+            ${{ on.rss.outputs.link }}
