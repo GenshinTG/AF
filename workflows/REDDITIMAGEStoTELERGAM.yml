@@ -1,6 +1,7 @@
+name: Send a telegram picture to channel on new GI post
 on:
   reddit:
-    url: https://www.reddit.com/r/memes/new
+    url: https://reddit.com/r/Genshin_Impact/new
     source: json
     config:
       filter:
