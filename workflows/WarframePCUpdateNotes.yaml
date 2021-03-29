@@ -1,0 +1,23 @@
+name: Warframe PC Update Notes
+on:
+  rss:
+    url: https://forums.warframe.com/forum/3-pc-update-notes.xml
+    config:
+      limit: 15
+      force: true
+jobs:
+  telegram:
+    name: Send a telegram message
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send a telegram message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_RSS1TESTCHANNEL }}
+          token: ${{ secrets.TELEGRAM_WARFRAMENEWSBOT_TOKEN }}
+          format: markdown
+          message: |
+            *PC Update Notes*
+
+            *${{ on.rss.outputs.title }}*
+            ${{ on.rss.outputs.link }}
