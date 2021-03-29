@@ -4,7 +4,7 @@ on:
     url: https://forums.warframe.com/forum/123-developer-workshop-update-notes.xml
     config:
       limit: 15
-      force: true
+      force: false
 jobs:
   telegram:
     name: Send a telegram message
@@ -13,7 +13,7 @@ jobs:
       - name: Send a telegram message
         uses: appleboy/telegram-action@master
         with:
-          to: ${{ secrets.TELEGRAM_RSS1TESTCHANNEL }}
+          to: ${{ secrets.TELEGRAM_WFNEWS_CHANNEL }}
           token: ${{ secrets.TELEGRAM_WARFRAMENEWSBOT_TOKEN }}
           format: markdown
           message: |
