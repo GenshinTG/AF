@@ -15,3 +15,26 @@ jobs:
           message: |
             ${{ on.reddit.outputs.title }}
             ${{ on.reddit.outputs.link }}
+
+on:
+  reddit:
+    url: https://www.reddit.com/r/memes/new
+    source: json
+    config:
+      filter:
+        url:
+          $regex: jpg|png
+jobs:
+  telegram:
+    name: Send a telegram message
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send a telegram message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_RSSTESTCHANNEL }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            ${{ on.reddit.outputs.title }}
+            ${{ on.reddit.outputs.link }}
+          photo: ${{ on.reddit.outputs.url }}
