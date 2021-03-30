@@ -1,0 +1,26 @@
+name: AeEntropy Tweets
+on:
+  twitter:
+    api: statuses/user_timeline
+    auth:
+      consumer_key: ${{ secrets.TWITTER_CONSUMER_KEY }}
+      consumer_secret: ${{ secrets.TWITTER_CONSUMER_SECRET }}
+      access_token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+      access_token_secret: ${{ secrets.TWITTER_ACCESS_SECRET }}
+    params:
+      screen_name: AeEntropy
+
+jobs:
+  telegram:
+    name: Send a telegram message
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send a telegram message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_GENSHINTWEETS_CHANNEL }}
+          token: ${{ secrets.TELEGRAM_GENSHIN_TOKEN }}
+          format: markdown
+          message: |
+            ${{ on.twitter.outputs.full_text }}
+            ${{ on.rss.outputs.entities.urls.expanded_url }}
