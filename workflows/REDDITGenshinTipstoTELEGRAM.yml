@@ -1,4 +1,4 @@
-name: Send a telegram message to channel when new hot GI Tips reddit post.
+name: Send a telegram message to channel when new hot GI Tips reddit post
 on:
   reddit:
     url: https://reddit.com/r/GenshinImpactTips/
