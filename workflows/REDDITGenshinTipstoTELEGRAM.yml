@@ -5,10 +5,10 @@ on:
     limit: 15
 jobs:
   telegram:
-    name: Send a telegram message
+    name: Send a telegram message GI Tips reddit
     runs-on: ubuntu-latest
     steps:
-      - name: Send a telegram message
+      - name: Send a telegram message GI Tips reddit 1
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_RSSTESTCHANNEL }}
