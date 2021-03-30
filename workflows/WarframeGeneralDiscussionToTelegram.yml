@@ -7,10 +7,10 @@ on:
       force: false
 jobs:
   telegram:
-    name: Send a telegram message
+    name: Warframe General Discussion Topics Send a telegram message
     runs-on: ubuntu-latest
     steps:
-      - name: Send a telegram message
+      - name: Warframe General Discussion Topics Send a telegram message 1
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_WFGENERALDISCUSSION_CHANNEL }}
